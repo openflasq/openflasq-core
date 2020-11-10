@@ -79,7 +79,7 @@ unsigned long currentMillis = 0;
 
 
 int sPomodoroTimer=0;
-int sPomodoroTimerEnd=20;//1500;
+int sPomodoroTimerEnd=1500;//25 mins testing;
 bool activePomodoroTimer = false;
     
 void setup() {
@@ -187,7 +187,7 @@ void updateMode(){
 void checkTouch() {
   updateSensors();
 
-  if (flaskTouch<10 && flaskTouch>0 && lastTouch>2 && activePomodoroTimer==false)    {
+  if (flaskTouch<10 && flaskTouch>0 && lastTouch>2 )    {
     updateMode();
   // REDUNDANT AF
   }//else if (flaskTouch<10 && flaskTouch>0 && lastTouch>2 && activePomodoroTimer==true) {
@@ -223,7 +223,7 @@ void loop() {
     if(activePomodoroTimer == true){
       if(sPomodoroTimer < sPomodoroTimerEnd){
         sPomodoroTimer++;
-        Serial.println("Pomodoro running for" + String(sPomodoroTimer) );
+        Serial.println("Pomodoro running for " + String(sPomodoroTimer) "seconds / " + String(sPomodoroTimerEnd) + "seconds"  );
       }else if(sPomodoroTimer >= sPomodoroTimerEnd) {
         updateMode();
       }
