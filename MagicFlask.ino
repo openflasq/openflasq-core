@@ -223,7 +223,7 @@ void loop() {
     if(activePomodoroTimer == true){
       if(sPomodoroTimer < sPomodoroTimerEnd){
         sPomodoroTimer++;
-        Serial.println("Pomodoro running for " + String(sPomodoroTimer) "seconds / " + String(sPomodoroTimerEnd) + "seconds"  );
+        Serial.println("Pomodoro running for " + String(sPomodoroTimer) + " seconds / " + String(sPomodoroTimerEnd) + " seconds"  );
       }else if(sPomodoroTimer >= sPomodoroTimerEnd) {
         updateMode();
       }
